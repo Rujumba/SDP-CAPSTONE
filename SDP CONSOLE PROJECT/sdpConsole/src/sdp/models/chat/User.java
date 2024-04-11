@@ -9,7 +9,16 @@ public class User implements ChatObserver {
         this.username = username;
     }
 
-    public void update(Message message) {
-        System.out.println(username + " received message from " + message.getSender() + ": " + message.getContent());
+    public void update(Message msg) {
+                System.out.println(msg.getSender()+": "+msg.getContent());  
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
 }

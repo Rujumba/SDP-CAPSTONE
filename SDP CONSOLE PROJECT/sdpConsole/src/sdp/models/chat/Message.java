@@ -29,6 +29,7 @@ public class Message {
     }
 
     public void setSentAt(LocalDateTime sentAt) {
-        this.sentAt = LocalDateTime.now();
+        this.sentAt = sentAt;
     }
+
 }

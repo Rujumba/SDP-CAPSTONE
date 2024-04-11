@@ -1,12 +1,13 @@
 package sdp;
 
 import sdp.views.accountReconciliation.views.AccountReconciliationView;
+import sdp.views.chat.views.ChatView;
 
 import java.util.Scanner;
 
-import sdp.views.chat.views.ChatApp;
+
 public class sdpMain {
-  private static ChatApp chatApp;
+  private static ChatView chatView;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -40,10 +41,8 @@ public class sdpMain {
                         // Add your Payments functionality here
                         break;
                     case 4:
-                        System.out.println("You chose Chat.");
-                        // Add your Chat functionality here
-                        chatApp= new ChatApp();
-                        chatApp.show();
+                        chatView=new ChatView();
+                        chatView.show();
                         break;
                     case 5:
                         System.out.println("You chose Accounts.");
