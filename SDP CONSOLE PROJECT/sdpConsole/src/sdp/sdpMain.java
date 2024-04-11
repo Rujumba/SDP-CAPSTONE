@@ -1,5 +1,7 @@
 package sdp;
 
+import sdp.views.accountReconciliation.views.AccountReconciliationView;
+
 import java.util.Scanner;
 
 
@@ -46,7 +48,8 @@ public class sdpMain {
                         break;
                     case 5:
                         System.out.println("You chose Accounts.");
-                        // Add your Accounts functionality here
+                        AccountReconciliationView accountReconciliationView = new AccountReconciliationView();
+                        accountReconciliationView.displayReconciliationView();
                         break;
                     case 6:
                         System.out.println("Exiting...");
