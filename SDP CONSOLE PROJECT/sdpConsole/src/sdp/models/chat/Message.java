@@ -7,10 +7,6 @@ public class Message {
     private String content;
     private LocalDateTime sentAt;
 
-    public Message(String sender, String content) {
-        this.sender = sender;
-        this.content = content;
-    }
 
     public String getSender() {
         return sender;
@@ -33,6 +29,6 @@ public class Message {
     }
 
     public void setSentAt(LocalDateTime sentAt) {
-        this.sentAt = sentAt;
+        this.sentAt = LocalDateTime.now();
     }
 }
