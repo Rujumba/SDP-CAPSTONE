@@ -1,39 +1,66 @@
 package sdp;
 
-import sdp.models.chat.ChatRoomManager;
-import sdp.models.chat.User;
-import sdp.views.chat.views.ChatController;
-import sdp.views.chat.views.ChatView;
+import java.util.Scanner;
+
+
 
 public class sdpMain {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean exit = false;
 
-        ChatRoomManager chatRoom = new ChatRoomManager();
+        while (!exit) {
+            System.out.println("Choose an option:");
+            System.out.println("1. Patients");
+            System.out.println("2. Services Offered");
+            System.out.println("3. Payments");
+            System.out.println("4. Chat");
+            System.out.println("5. Accounts");
+            System.out.println("6. Exit");
 
-        // Create users
-        User user1 = new User("User1");
-        User user2 = new User("User2");
+            System.out.print("Enter your choice: ");
+            int choice;
 
-        // Add users to chat room
-        chatRoom.addObserver(user1);
-        chatRoom.addObserver(user2);
+            // Validate input to ensure it's an integer
+            if (scanner.hasNextInt()) {
+                choice = scanner.nextInt();
+                scanner.nextLine(); // Consume newline character
 
-        // Create controller
-        ChatController controller = new ChatController(chatRoom, new ChatView());
-
-        // Continuously prompt for user input
-        while (true) {
-            System.out.println("Enter your message (or 'exit' to leave): ");
-            String input = controller.getChatView().getUserInput();
-
-            if (input.equalsIgnoreCase("exit")) {
-                 // Assume user1 wants to leave add method to detach the user
-                break;
+                switch (choice) {
+                    case 1:
+                        System.out.println("You chose Patients.");
+                        // Add your Patients functionality here
+                        break;
+                    case 2:
+                        System.out.println("You chose Services Offered.");
+                        // Add your Services Offered functionality here
+                        break;
+                    case 3:
+                        System.out.println("You chose Payments.");
+                        // Add your Payments functionality here
+                        break;
+                    case 4:
+                        System.out.println("You chose Chat.");
+                        // Add your Chat functionality here
+                        break;
+                    case 5:
+                        System.out.println("You chose Accounts.");
+                        // Add your Accounts functionality here
+                        break;
+                    case 6:
+                        System.out.println("Exiting...");
+                        exit = true;
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please enter a number between 1 and 6.");
+                }
             } else {
-                controller.sendMessage(user1, input);
+                System.out.println("Invalid choice. Please enter a valid number.");
+                scanner.next(); // Consume invalid input
             }
         }
+        scanner.close();
     }
 
 }
