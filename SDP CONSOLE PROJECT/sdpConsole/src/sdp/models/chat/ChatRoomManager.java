@@ -1,14 +1,18 @@
 package sdp.models.chat;
 
 import sdp.repository.ChatRepository;
+import sdp.views.chat.ChatObservable;
 import sdp.views.chat.ChatObserver;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChatRoomManager {
+public class ChatRoomManager implements ChatObservable{
     private ChatRepository chatRepository;
     private List<ChatObserver> observers = new ArrayList<>();
+    public ChatRoomManager(ChatRepository chatRepository){
+        this.chatRepository=chatRepository;
+    }
 
     public void addObserver(ChatObserver observer) {
         observers.add(observer);

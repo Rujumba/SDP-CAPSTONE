@@ -1,10 +1,14 @@
 package sdp;
 
+import sdp.views.accountReconciliation.views.AccountReconciliationView;
+import sdp.views.chat.views.ChatView;
+import sdp.views.patient.PatientController;
+
 import java.util.Scanner;
 
 
-
 public class sdpMain {
+  private static ChatView chatView;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -18,19 +22,17 @@ public class sdpMain {
             System.out.println("4. Chat");
             System.out.println("5. Accounts");
             System.out.println("6. Exit");
-
             System.out.print("Enter your choice: ");
             int choice;
-
+            
             // Validate input to ensure it's an integer
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
                 scanner.nextLine(); // Consume newline character
-
                 switch (choice) {
                     case 1:
-                        System.out.println("You chose Patients.");
-                        // Add your Patients functionality here
+                        PatientController patientController = new PatientController();
+                        patientController.choosePatientOption();
                         break;
                     case 2:
                         System.out.println("You chose Services Offered.");
@@ -41,12 +43,13 @@ public class sdpMain {
                         // Add your Payments functionality here
                         break;
                     case 4:
-                        System.out.println("You chose Chat.");
-                        // Add your Chat functionality here
+                        chatView=new ChatView();
+                        chatView.show();
                         break;
                     case 5:
                         System.out.println("You chose Accounts.");
-                        // Add your Accounts functionality here
+                        AccountReconciliationView accountReconciliationView = new AccountReconciliationView();
+                        accountReconciliationView.displayReconciliationView();
                         break;
                     case 6:
                         System.out.println("Exiting...");
