@@ -3,6 +3,8 @@ package sdp;
 import sdp.views.accountReconciliation.views.AccountReconciliationView;
 import sdp.views.chat.views.ChatView;
 import sdp.views.patient.PatientController;
+import sdp.views.invoiceView.InvoiceView;
+import sdp.views.medicalServiceView.MedicalServiceView;
 
 import java.util.Scanner;
 
@@ -36,15 +38,20 @@ public class sdpMain {
                         break;
                     case 2:
                         System.out.println("You chose Services Offered.");
-                        // Add your Services Offered functionality here
+                        MedicalServiceView newView = new MedicalServiceView();
+                        newView.displayMedicalService();
                         break;
                     case 3:
                         System.out.println("You chose Payments.");
+                        InvoiceView invoiceView  = InvoiceView.getInstance();
+                        invoiceView.displayInvoice();
                         // Add your Payments functionality here
                         break;
                     case 4:
+                    System.out.println("You chose Chat.");
                         chatView=new ChatView();
                         chatView.show();
+                        // Add your Chat functionality here
                         break;
                     case 5:
                         System.out.println("You chose Accounts.");
