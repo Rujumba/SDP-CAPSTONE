@@ -1,7 +1,6 @@
 package sdp.repository;
 
 import sdp.models.medicalServiceModel.MedicalService;
-import sdp.views.invoiceView.MedicalServiceObserver;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -4,12 +4,13 @@ import sdp.models.invoice.Invoice;
 import sdp.models.medicalServiceModel.MedicalService;
 import sdp.repository.IInvoiceRepository;
 import sdp.repository.InvoiceRepository;
+import sdp.views.MedicalServiceObserver;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class InvoiceView implements MedicalServiceObserver{
+public class InvoiceView implements MedicalServiceObserver {
 
     private static InvoiceView instance;
     private IInvoiceRepository invoiceRepository;
