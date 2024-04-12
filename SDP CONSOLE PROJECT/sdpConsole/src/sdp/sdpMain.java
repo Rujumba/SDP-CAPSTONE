@@ -1,5 +1,8 @@
 package sdp;
 
+import sdp.views.invoiceView.InvoiceView;
+import sdp.views.medicalServiceView.MedicalServiceView;
+
 import java.util.Scanner;
 
 
@@ -34,13 +37,13 @@ public class sdpMain {
                         break;
                     case 2:
                         System.out.println("You chose Services Offered.");
-                        // Add your Services Offered functionality here
+                        MedicalServiceView newView = new MedicalServiceView();
+                        newView.displayMedicalService();
                         break;
                     case 3:
                         System.out.println("You chose Payments.");
-                        // Add your Payments functionality here
-                        break;
-                    case 4:
+                        InvoiceView invoiceView  = InvoiceView.getInstance();
+                        invoiceView.displayInvoice();
                         System.out.println("You chose Chat.");
                         // Add your Chat functionality here
                         break;
