@@ -1,6 +1,5 @@
 package sdp.models.account;
 
-import java.util.Date;
 
 public class AccountPayable {
     private double amount;

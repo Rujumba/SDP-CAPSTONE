@@ -2,6 +2,7 @@ package sdp;
 
 import sdp.views.accountReconciliation.views.AccountReconciliationView;
 import sdp.views.chat.views.ChatView;
+import sdp.views.patient.PatientController;
 
 import java.util.Scanner;
 
@@ -23,14 +24,15 @@ public class sdpMain {
             System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
             int choice;
+            
             // Validate input to ensure it's an integer
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
                 scanner.nextLine(); // Consume newline character
                 switch (choice) {
                     case 1:
-                        System.out.println("You chose Patients.");
-                        // Add your Patients functionality here
+                        PatientController patientController = new PatientController();
+                        patientController.choosePatientOption();
                         break;
                     case 2:
                         System.out.println("You chose Services Offered.");
